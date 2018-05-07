@@ -7,13 +7,11 @@ function fetchData(url) {
     .then(res => res.json());
 }
 //random dog images
-fetch('https://dog.ceo/api/breeds/image/random')
-  .then(response => response.json())
+fetchData('https://dog.ceo/api/breeds/image/random')
   .then(data => generateImage(data.message));
 
 //list of breeds
-fetch('https://dog.ceo/api/breeds/list')
-  .then(response => response.json())
+fetchData('https://dog.ceo/api/breeds/list')
   .then(data => generateBreedList(data.message));
 
 //fetch breed image
